@@ -113,7 +113,7 @@ input:focus{
 
 .input-rounder{
     position: relative !important;
-    display: flex;
+    display: flex !important;
     flex-wrap: wrap;
 }
 
@@ -196,7 +196,7 @@ button {
 
 #submit-button{
     cursor: pointer !important;
-    display: inline-block !important;
+    display: inline-flex !important;
     position: relative !important;
     text-align: center !important;
     width: auto !important;
@@ -246,6 +246,64 @@ button {
     }
 }
 
+@media (max-width: 550px){
+    #content-header-wrapper {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    #div-submit-button{
+        display: inline-block !important;
+        width: 100% !important;
+        align-self: center !important;
+    }
+
+    .input-rounder {
+        align-self: center !important;
+        width: 100% !important;
+    }
+    .space-columns {
+        display: none !important;
+    }
+
+    .text-label, .input-text, .label-local {
+        align-self: center !important;
+        width: 100% !important;
+    }
+
+}
+
+@media (max-width: 500px){
+    #content-header-wrapper {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    #div-submit-button{
+        display: inline-block !important;
+        width: 100% !important;
+        align-self: center !important;
+    }
+
+    .input-rounder {
+        align-self: center !important;
+        width: 100% !important;
+    }
+    .space-columns {
+        display: none !important;
+    }
+
+    .text-label, .input-text, .label-local {
+        align-self: center !important;
+        width: 100% !important;
+    }
+
+}
+
 @media (max-width: 425px){
     #content-header-wrapper {
         padding-left: 0px !important;
@@ -254,8 +312,28 @@ button {
         justify-content: center !important;
     }
 
+    #div-submit-button{
+        display: inline-block !important;
+        width: 100% !important;
+        align-self: center !important;
+    }
+
+    .input-rounder {
+        align-self: center !important;
+        width: 100% !important;
+    }
+    .space-columns {
+        display: none !important;
+    }
+
+    .text-label, .input-text, .label-local {
+        align-self: center !important;
+        width: 100% !important;
+    }
+
 }
-@media (max-width: 375px){
+
+@media (max-width: 405px){
     #content-header-wrapper {
         padding-left: 0px !important;
         padding-right: 0px !important;
@@ -264,10 +342,45 @@ button {
     }
 
     .input-rounder {
-        display: block !important;
+        align-self: center !important;
+        width: 100% !important;
     }
     .space-columns {
         display: none !important;
+    }
+
+    .text-label, .input-text, .label-local {
+        align-self: center !important;
+        width: 100% !important;
+    }
+
+}
+
+@media (max-width: 375px){
+    #content-header-wrapper {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    #div-submit-button{
+        display: inline-block !important;
+        width: 100% !important;
+        align-self: center !important;
+    }
+
+    .input-rounder {
+        align-self: center !important;
+        width: 100% !important;
+    }
+    .space-columns {
+        display: none !important;
+    }
+
+    .text-label, .input-text, .label-local {
+        align-self: center !important;
+        width: 100% !important;
     }
 } 
 
@@ -280,7 +393,7 @@ button {
     }
 
     .input-rounder {
-        text-align: center;
+        align-self: center;
     }
 
     .label-local {
