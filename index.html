@@ -26,15 +26,61 @@
                     </svg>
                 </a>
             </div>
-            <section id="form">
-                <form action="">
-                    <div id="choose-options">
-                        <label for="">Localização</label>
-                        <input type="text">
-                    </div>
-
-                </form>
-            </section>
+            <form action="">
+                <section id="border-form">
+                    <div id="all-inputs">
+                        <div class="input-rounder">
+                            <label class="label-local" for="">
+                                <div class="text-label">
+                                    Localização
+                                </div>
+                                <input aria-expanded="false" placeholder="Para onde voce vai?" autocomplete="off" class="input-text" type="text">
+                            </label>
+                            
+                        </div>
+                        <div class="space-columns"></div>
+                            <div class="input-rounder">
+                                <label class="label-local" for="">
+                                    <div class="text-label">
+                                        Check-in
+                                    </div>
+                                    <input aria-expanded="false" aria-valuenow="false" placeholder="Insira a data" class="input-text" type="text" onfocus="(this.type='date')"
+                                    onblur="(this.type='text')">
+                                </label>
+                            </div>
+                            <div class="space-columns"></div>
+                            <div class="input-rounder">
+                                <label class="label-local" for="">
+                                    <div class="text-label">
+                                        Checkout
+                                    </div>
+                                    <input aria-expanded="false" aria-valuenow="false" placeholder="Insira a data" class="input-text" type="text" onfocus="(this.type='date')"
+                                    onblur="(this.type='text')">
+                                </label>
+                            </div>
+                            <div class="space-columns"></div>
+                            <div class="input-rounder">
+                                <label class="label-local" for="">
+                                    <div class="text-label">
+                                        Hóspedes
+                                    </div>
+                                    <input aria-expanded="false" placeholder="Número de Hóspedes" autocomplete="off" class="input-text" type="number" min="1"  onblur="(this.type='text')">
+                                </label>
+            
+                            </div>
+                            <div class="space-columns"></div>
+                            <div id="div-submit-button">
+                                <button id="submit-button" type="submit">
+                                    <span id="nome-submit">
+                                        Buscar
+                                    </span>
+                                </button>
+                            </div>
+                    </div>  
+                    
+                    
+                </section>
+        </form>
         </section>
     </header>
 

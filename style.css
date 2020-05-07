@@ -6,7 +6,6 @@
     padding: 0;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    font-size: 14px;
     line-height: 1.43;
     color: #484848;
     background-color: #fff;
@@ -21,6 +20,12 @@
             opacity: 1;
             transform: scale3d(1, 1, 1);
         }
+}
+
+::-webkit-date-edit-field:not([aria-valuenow]),
+::-webkit-datetime-edit-month-field:not([aria-valuenow]),
+::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
+    color: transparent;
 }
 
 header {
@@ -50,7 +55,7 @@ svg {
     width: 102px;
     height: 32px;
     fill: #FF385C;
-    margin-top: 12px;
+    margin-top: 10px;
 }
 
 hr {
@@ -62,11 +67,145 @@ hr {
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-#choose-options{
-    border-radius: 12px;
+#border-form{
+    background-color: rgb(255, 255, 255) !important;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 8px !important;
+    color: rgb(34, 34, 34) !important;
+    display: inline-flex !important;
+    max-width: 100% !important;
+    width: fit-content;
+    position: relative !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: rgb(247, 247, 247) !important;
+    border-image: initial !important;
+    border-radius: 15px !important;
+    text-align: center;
+    flex: 1 0 1;
 }
 
-#form{
-    float: right;
+input:focus{
+    outline: none;
+}
 
+#all-inputs{
+    display: inline-flex !important;
+    max-width: 100% !important;
+}
+
+.input-rounder{
+    position: relative !important;
+}
+
+.label-local{
+    display: block !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 2 !important;
+    transition: border-color 0.2s ease 0s !important;
+    border-width: 2px !important;
+    border-style: solid !important;
+    border-color: transparent !important;
+    border-image: initial !important;
+    border-radius: 12px !important;
+    padding: 16px 22px !important;
+}
+
+.text-label{
+    font-size: 11px !important;
+    line-height: 12px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+    padding-bottom: 4px !important;
+}
+
+
+
+.input-text{
+    display: flex !important;
+    width: 100% !important;
+    font-size: 14px !important;
+    line-height: 18px !important;
+    font-weight: 600 !important;
+    color: rgb(34, 34, 34) !important;
+    text-overflow: ellipsis !important;
+    border-width: 0px !important;
+    border-style: initial !important;
+    border-color: initial !important;
+    border-image: initial !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    background: none !important;
+}
+
+
+.space-columns{
+    align-self: center !important;
+    height: 44px !important;
+    border-right: 1px solid rgb(221, 221, 221) !important;
+    flex: 0 1 0px !important;
+}
+
+input{
+    text-align: center;
+}
+
+::placeholder{
+    font-size: 10px;
+    opacity: 0.5;
+    text-align: center;
+}
+
+button {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: center;
+    cursor: default;
+    font: 400 11px;
+}
+#id-submit-button{
+    margin-left: 2px !important;
+    padding: 11px !important;
+}
+
+#submit-button{
+    cursor: pointer !important;
+    display: inline-block !important;
+    position: relative !important;
+    text-align: center !important;
+    width: auto !important;
+    font-size: 14px !important;
+    line-height: 18px !important;
+    font-weight: 600 !important;
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    color: rgb(255, 255, 255) !important;
+    white-space: nowrap !important;
+    margin: 10px 20px !important;
+    text-decoration: none !important;
+    border-radius: 8px !important;
+    outline: none !important;
+    background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important;
+}
+
+#nome-submit{
+    color: white;
+    background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important;
+}
+
+@media (max-width: 1210px) {
+    form, input, button {
+        width: 100%;
+    }
+    hr {
+        display: none;
+    }
 }
