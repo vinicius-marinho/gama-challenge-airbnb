@@ -16,7 +16,7 @@
 </head>
 <body>
 
-    <header>
+    <header class="sticky">
         <section id="content-header-wrapper">
             <div id="div-image">
                 <a href="/" aria-label="Página de aluguel de quartos">
@@ -26,15 +26,15 @@
                     </svg>
                 </a>
             </div>
-            <form action="">
-                <section id="border-form">
+            <form action="/">
+                <nav id="border-form">
                     <div id="all-inputs">
                         <div class="input-rounder">
                             <label class="label-local" for="">
                                 <div class="text-label">
                                     Localização
                                 </div>
-                                <input aria-expanded="false" placeholder="Para onde voce vai?" autocomplete="off" class="input-text" type="text">
+                                <input required aria-expanded="false" placeholder="Para onde voce vai?" autocomplete="off" class="input-text" type="text">
                             </label>
                             
                         </div>
@@ -44,7 +44,7 @@
                                     <div class="text-label">
                                         Check-in
                                     </div>
-                                    <input aria-expanded="false" aria-valuenow="false" placeholder="Insira a data" class="input-text" type="text" onfocus="(this.type='date')"
+                                    <input required aria-expanded="false" aria-valuenow="false" placeholder="Insira a data" name="checkin" class="input-text" type="text" onfocus="(this.type='date')"
                                     onblur="(this.type='text')">
                                 </label>
                             </div>
@@ -54,7 +54,7 @@
                                     <div class="text-label">
                                         Checkout
                                     </div>
-                                    <input aria-expanded="false" aria-valuenow="false" placeholder="Insira a data" class="input-text" type="text" onfocus="(this.type='date')"
+                                    <input required aria-expanded="false" aria-valuenow="false" placeholder="Insira a data" class="input-text" name="checkout" type="text" onfocus="(this.type='date')"
                                     onblur="(this.type='text')">
                                 </label>
                             </div>
@@ -70,7 +70,7 @@
                             </div>
                             <div class="space-columns"></div>
                             <div id="div-submit-button">
-                                <button id="submit-button" type="submit">
+                                <button id="submit-button" type="submit" value="submit">
                                     <span id="nome-submit">
                                         Buscar
                                     </span>
@@ -79,18 +79,19 @@
                     </div>  
                     
                     
-                </section>
+                </nav>
         </form>
         </section>
+        
     </header>
-
     <hr>
+    
 
     
     
        
     
-    
+<script src="app.js"></script>
 </body>
 </html>
 

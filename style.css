@@ -11,6 +11,10 @@
     background-color: #fff;
 }
 
+html{
+    scroll-behavior: smooth !important;
+}
+
     @keyframes fadeAndScale {
         from {
             opacity: 0;
@@ -34,15 +38,22 @@ header {
     width: 100% !important;
     z-index: 100 !important;
     font-weight: 600;
+    top: 0;
     --header-brand-color: #FF385C !important;
     display: block;
-    margin-top: 30px;
+    margin: 0 auto;
     animation: fadeAndScale .3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.sticky{
+    position: sticky;
+    bottom: 50px;
 }
 
 #content-header-wrapper {
     padding: 0 80px;
     display: flex;
+    margin-top: 8px;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -55,16 +66,17 @@ svg {
     width: 102px;
     height: 32px;
     fill: #FF385C;
-    margin-top: 10px;
+    margin-top: 8px;
 }
 
 hr {
     border: 0;
     height: 0;
-    padding-right: 13px;
-    margin-top: 8px;
+    margin-top: 13px;
+    margin-bottom: 10px;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    outline: none;
 }
 
 #border-form{
@@ -84,6 +96,10 @@ hr {
     flex: 1 0 1;
 }
 
+nav{
+    margin-top: 5px;
+}
+
 input:focus{
     outline: none;
 }
@@ -95,6 +111,7 @@ input:focus{
 
 .input-rounder{
     position: relative !important;
+    display: flex;
 }
 
 .label-local{
