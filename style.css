@@ -219,10 +219,20 @@ button {
 }
 
 @media (max-width: 1210px) {
-    form, input, button {
+    form, nav, input, button {
         width: 100%;
     }
     hr {
         display: none;
+    }
+}
+
+@media (max-width: 474px){
+    form, nav {
+        width: 100%;
+    }
+
+    #div-image{
+        display: block;
     }
 }
