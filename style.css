@@ -83,10 +83,10 @@ hr {
     background-color: rgb(255, 255, 255) !important;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 8px !important;
     color: rgb(34, 34, 34) !important;
-    display: inline-flex !important;
+    display: flex !important;
     max-width: 100% !important;
     width: fit-content;
-    position: relative !important;
+    /* position: relative !important; */
     border-width: 1px !important;
     border-style: solid !important;
     border-color: rgb(247, 247, 247) !important;
@@ -105,13 +105,16 @@ input:focus{
 }
 
 #all-inputs{
-    display: inline-flex !important;
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: wrap;
     max-width: 100% !important;
 }
 
 .input-rounder{
     position: relative !important;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .label-local{
@@ -218,21 +221,81 @@ button {
     background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important;
 }
 
-@media (max-width: 1210px) {
-    form, nav, input, button {
-        width: 100%;
+@media (max-width: 1440px) {
+    #content-header-wrapper {
+        padding-left: 80px !important;
+        padding-right: 80px !important;
     }
-    hr {
-        display: none;
+
+}
+
+@media (max-width: 1024px){
+    #content-header-wrapper {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .label-local {
+        padding: 10px 15px !important;
+    }
+
+    #all-inputs{
+        max-width: 100%;
     }
 }
 
-@media (max-width: 474px){
-    form, nav {
-        width: 100%;
+@media (max-width: 425px){
+    #content-header-wrapper {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
 
-    #div-image{
-        display: block;
-    }
 }
+@media (max-width: 375px){
+    #content-header-wrapper {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .input-rounder {
+        display: block !important;
+    }
+    .space-columns {
+        display: none !important;
+    }
+} 
+
+@media (max-width: 320px){
+    #content-header-wrapper {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .input-rounder {
+        text-align: center;
+    }
+
+    .label-local {
+        padding: 10px 25px !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    #border-form {
+        display: block !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .space-columns {
+        display: none !important;
+    }
+} 
