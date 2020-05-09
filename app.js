@@ -5,6 +5,22 @@ const main = document.querySelector('.main-wrapper')
 
 
 
+function totalValue(){
+    const entrada = parseInt(checkin.value.split('-')[2]);
+    const saida = parseInt(checkout.value.split('-')[2]);
+
+    const valor_total = document.querySelectorAll('.valor-total');
+    const precos = document.querySelectorAll('.preco')
+    
+    const allValues = [...valor_total]
+    
+    allValues.forEach((v, i) => {
+        let preco = parseInt(precos[i].textContent.split('R$')[1])
+        v.textContent = `Total de R$${preco * (saida - entrada)} por ${saida - entrada} noites`
+        
+    })
+}
+
 function preventWrongDate(){
     if(checkin.value > checkout.value){
         checkin.placeholder = 'Checkout menor que checkin'
@@ -22,6 +38,7 @@ function preventWrongDate(){
 form.addEventListener('submit', (e) => {
     e.preventDefault()
     preventWrongDate()
+    totalValue()
     
 })
 
@@ -46,7 +63,8 @@ function constructCards(data){
     articles_images.classList.toggle('articles-images');
 
     let source_image = document.createElement('img');
-    source_image.src = value.photo
+    source_image.src = value.photo.replace('xx_large', 'large')
+    source_image.alt = value.name
 
     let tipo = document.createElement('div')
     tipo.classList.toggle('tipo')
@@ -111,11 +129,5 @@ function constructCards(data){
 
 
     })
-    
-    data.map(value => {
-        console.log(value)
-    })
-    // data.map(v => {
-    //     console.log(v[0])
-    // })
+
 }
