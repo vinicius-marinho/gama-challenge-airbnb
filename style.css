@@ -358,8 +358,7 @@ h1{
     object-fit: fill;
 }
 .articles:hover {
-    transform: scale(1.1);
-    box-shadow: rgba(0, 0, 0, 0.06) 0px 4px 8px !important;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 6px 8px !important;
     cursor: pointer;
     margin-bottom: 20px !important;
     margin-top: 20px !important;
