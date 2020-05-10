@@ -2,23 +2,72 @@ const form = document.querySelector('form');
 const checkin = document.querySelector('form input[name="checkin"]')
 const checkout = document.querySelector('form input[name="checkout"]')
 const main = document.querySelector('.main-wrapper')
+const pagination = document.querySelector('#pagination')
+let currentPage = 1
+let rows = 6
 
+function paginateElements(items, rows_per_page, page){
+    main.innerHTML = ""
 
+    page--;
+
+    let loop_start = rows_per_page * page;
+    let end = loop_start + rows_per_page;
+    let paginatedItems = items.slice(loop_start,end);
+    
+    paginatedItems.forEach((v) => {
+        constructCards(v)
+    })
+
+}
+
+function SetupPagination(items, wrapper, rows_per_page){
+    let page_count = Math.ceil(items.length / rows_per_page);
+    for(let i = 1; i< page_count + 1; i++){
+        let btn = PaginationButton(i, items);
+        wrapper.appendChild(btn);
+    }
+}
+
+function PaginationButton(page, items){
+    let button = document.createElement('button');
+    button.innerText = page;
+    if(currentPage == page){
+        button.classList.toggle('active');
+    }
+
+    button.addEventListener('click', function (){
+        currentPage = page
+        paginateElements(items, rows, currentPage)
+
+        let currentBtn = document.querySelector(".pagenumbers button.active");
+        currentBtn.classList.remove('active')
+
+        button.classList.add('active')
+
+        totalValue()
+
+    })
+    return button;
+}
 
 function totalValue(){
     const entrada = parseInt(checkin.value.split('-')[2]);
     const saida = parseInt(checkout.value.split('-')[2]);
-
-    const valor_total = document.querySelectorAll('.valor-total');
-    const precos = document.querySelectorAll('.preco')
     
-    const allValues = [...valor_total]
+    if(!Number.isNaN(entrada)){
+        const valor_total = document.querySelectorAll('.valor-total');
+        const precos = document.querySelectorAll('.preco')
     
-    allValues.forEach((v, i) => {
-        let preco = parseInt(precos[i].textContent.split('R$')[1])
-        v.textContent = `Total de R$${preco * (saida - entrada)} por ${saida - entrada} noites`
+        const allValues = [...valor_total]
+    
+        allValues.forEach((v, i) => {
+            let preco = parseInt(precos[i].textContent.split('R$')[1])
+            v.textContent = `Total de R$${preco * (saida - entrada)} por ${saida - entrada} noites`
         
-    })
+        })
+    } 
+
 }
 
 function preventWrongDate(){
@@ -48,14 +97,14 @@ fetch('https://api.sheety.co/30b6e400-9023-4a15-8e6c-16aa4e3b1e72').then(respons
     return response.json()   
 
 }).then( data => {
-    constructCards(data);
+    paginateElements(data, rows, currentPage)
+    SetupPagination(data, pagination, rows)
 }).catch((data) => {
     console.log(data)
 })
 
 function constructCards(data){
-
-    data.map(value => {
+    let value = data;
     let articles = document.createElement('article');
     articles.classList.toggle('articles');
 
@@ -126,8 +175,5 @@ function constructCards(data){
 
     body_height.appendChild(valor_total)
 
-
-
-    })
 
 }
