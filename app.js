@@ -57,17 +57,23 @@ function totalValue(){
     
     if(!Number.isNaN(entrada)){
         let totalDias = saida - entrada;
-        if(totalDias !== 0){
         const valor_total = document.querySelectorAll('.valor-total');
         const precos = document.querySelectorAll('.preco');
     
         const allValues = [...valor_total];
     
+        if(totalDias !== 0){
+        
         allValues.forEach((v, i) => {
             let preco = parseInt(precos[i].textContent.split('R$')[1]);
             v.textContent = `Total de R$${preco * (saida - entrada)} por ${saida - entrada} noites`;
         
         })
+        } else {
+            allValues.forEach((v, i) => {
+                v.textContent = `Total de R$${precos[i].textContent.split('R$')[1]}`
+
+            })
         }
         
     } 
