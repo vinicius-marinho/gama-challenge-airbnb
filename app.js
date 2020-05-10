@@ -56,16 +56,20 @@ function totalValue(){
     const saida = parseInt(checkout.value.split('-')[2]);
     
     if(!Number.isNaN(entrada)){
+        let totalDias = saida - entrada;
+        if(totalDias !== 0){
         const valor_total = document.querySelectorAll('.valor-total');
-        const precos = document.querySelectorAll('.preco')
+        const precos = document.querySelectorAll('.preco');
     
-        const allValues = [...valor_total]
+        const allValues = [...valor_total];
     
         allValues.forEach((v, i) => {
-            let preco = parseInt(precos[i].textContent.split('R$')[1])
-            v.textContent = `Total de R$${preco * (saida - entrada)} por ${saida - entrada} noites`
+            let preco = parseInt(precos[i].textContent.split('R$')[1]);
+            v.textContent = `Total de R$${preco * (saida - entrada)} por ${saida - entrada} noites`;
         
         })
+        }
+        
     } 
 
 }
