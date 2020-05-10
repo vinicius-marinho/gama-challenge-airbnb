@@ -112,7 +112,7 @@ function constructCards(data){
     articles_images.classList.toggle('articles-images');
 
     let source_image = document.createElement('img');
-    source_image.src = value.photo.replace('xx_large', 'large')
+    source_image.src = value.photo.replace(/x_large|xx_large/, 'large')
     source_image.alt = value.name
 
     let tipo = document.createElement('div')

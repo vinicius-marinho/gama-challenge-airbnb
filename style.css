@@ -432,6 +432,10 @@ img {
         padding: 10px 15px !important;
     }
 
+    #div-image{
+        margin-right: 20px !important;
+    }
+
     #all-inputs{
         max-width: 100%;
     }
