@@ -101,17 +101,20 @@ form.addEventListener('submit', (e) => {
     
 })
 
-fetch('https://api.sheety.co/30b6e400-9023-4a15-8e6c-16aa4e3b1e72').then(response => {
-    if(!response.ok)
-        throw new Error(`Status Code Error: ${response.status}`)
-    return response.json()   
+async function run(url = 'https://api.sheety.co/30b6e400-9023-4a15-8e6c-16aa4e3b1e72'){
+    try {
+        const response = await fetch(url)
+        if(!response.ok)
+            throw new Error(`Status Code Error: ${response.status}`)
+        
+        const data = await response.json()
+        return data
 
-}).then( data => {
-    paginateElements(data, rows, currentPage)
-    SetupPagination(data, pagination, rows)
-}).catch((data) => {
-    console.log(data)
-})
+    } catch (error) {
+        throw new Error(`Error! ${error}`)
+    }
+    
+}
 
 function constructCards(data){
     let value = data;
@@ -187,3 +190,8 @@ function constructCards(data){
 
 
 }
+
+run().then(data => {
+    paginateElements(data, rows, currentPage)
+    SetupPagination(data, pagination, rows)
+})
